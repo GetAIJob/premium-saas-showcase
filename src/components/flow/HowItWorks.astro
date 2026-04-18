@@ -1,0 +1,57 @@
+---
+import { howItWorks } from "../../lib/content";
+---
+
+<section id="how-it-works" class="section relative">
+  <div class="container-page">
+    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
+      <span class="eyebrow">
+        <span class="w-1 h-1 rounded-full bg-cyan-300"></span>
+        How it works
+      </span>
+      <h2 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-[-0.022em] leading-[1.05]">
+        Three steps to <span class="text-gradient">production</span>.
+      </h2>
+      <p class="mt-5 text-lg text-slate-300 max-w-xl mx-auto">
+        From signing in to your first deployed agent. No infrastructure to set up, no boilerplate to maintain.
+      </p>
+    </div>
+
+    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <!-- Connecting line (desktop) -->
+      <div aria-hidden class="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-indigo-400/40 to-transparent"></div>
+
+      {howItWorks.map((s, i) => (
+        <div class="reveal relative" style={`transition-delay: ${i * 120}ms;`}>
+          <div class="glass rounded-2xl p-7 md:p-8 h-full hover:border-white/[0.14] transition-colors duration-500">
+            <div class="flex items-center justify-between mb-5">
+              <span class="text-sm font-mono text-cyan-300/80">{s.step}</span>
+              <span class="w-10 h-10 rounded-full glass-strong flex items-center justify-center text-cyan-200">
+                {i === 0 && (
+                  <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                    <path d="M9 4 H5 a2 2 0 0 0 -2 2 v12 a2 2 0 0 0 2 2 h14 a2 2 0 0 0 2 -2 V6 a2 2 0 0 0 -2 -2 H15"/>
+                    <path d="M9 4 v6 H15 V4"/>
+                  </svg>
+                )}
+                {i === 1 && (
+                  <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                    <circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/>
+                    <circle cx="12" cy="18" r="2"/>
+                    <path d="M6 6 L12 18 M18 6 L12 18"/>
+                  </svg>
+                )}
+                {i === 2 && (
+                  <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                    <path d="M5 12 L19 12 M13 6 L19 12 L13 18"/>
+                  </svg>
+                )}
+              </span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-display font-semibold tracking-tight mb-2">{s.title}</h3>
+            <p class="text-sm md:text-[15px] text-slate-400 leading-relaxed">{s.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

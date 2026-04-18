@@ -1,0 +1,68 @@
+---
+import { nav, brand } from "../../lib/content";
+import MobileMenu from "./MobileMenu";
+---
+
+<header
+  id="site-nav"
+  class="fixed top-0 left-0 right-0 z-50 transition-[background,backdrop-filter,border-color,padding] duration-300 ease-out border-b border-transparent"
+  data-scrolled="false"
+>
+  <div class="container-page flex items-center justify-between h-16 md:h-20">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="relative inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-brand">
+        <span class="absolute inset-0 rounded-lg bg-gradient-brand blur-md opacity-50 group-hover:opacity-80 transition-opacity"></span>
+        <svg viewBox="0 0 32 32" class="relative w-5 h-5 text-[#050816]" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
+          <path d="M9 9 L9 22 L22 22" />
+        </svg>
+      </span>
+      <span class="font-display font-semibold text-lg tracking-tight">{brand.name}</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
+      {nav.links.map((link) => (
+        <a
+          href={link.href}
+          class="px-4 py-2 text-sm text-slate-300 hover:text-white transition-colors rounded-full hover:bg-white/[0.04]"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Right cluster -->
+    <div class="flex items-center gap-2">
+      <a href={nav.signin.href} class="hidden md:inline-flex px-4 py-2 text-sm text-slate-300 hover:text-white transition-colors rounded-full hover:bg-white/[0.04]">
+        {nav.signin.label}
+      </a>
+      <a href={nav.cta.href} class="btn-primary !py-2 !px-4 !text-sm">
+        {nav.cta.label}
+        <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg>
+      </a>
+      <MobileMenu client:idle />
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    const nav = document.getElementById("site-nav");
+    if (!nav) return;
+    const onScroll = () => {
+      const scrolled = window.scrollY > 24;
+      if (scrolled) {
+        nav.classList.add("glass-strong", "border-white/[0.06]");
+        nav.classList.remove("border-transparent");
+      } else {
+        nav.classList.remove("glass-strong", "border-white/[0.06]");
+        nav.classList.add("border-transparent");
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>

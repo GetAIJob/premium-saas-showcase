@@ -1,0 +1,22 @@
+---
+import { trustLogos } from "../../lib/content";
+---
+
+<section class="relative py-16 md:py-20" aria-labelledby="trust-heading">
+  <div class="container-page">
+    <p id="trust-heading" class="text-center text-xs uppercase tracking-[0.18em] text-slate-500 mb-8 reveal">
+      Trusted by teams shipping at
+    </p>
+
+    <ul class="reveal flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
+      {trustLogos.map((logo) => (
+        <li class="flex items-center gap-2.5 text-slate-400 hover:text-slate-200 transition-colors duration-300">
+          <svg viewBox="0 0 36 22" width="28" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d={logo.path} />
+          </svg>
+          <span class="text-sm md:text-base font-medium tracking-tight">{logo.name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,149 @@
+---
+import Base from "../layouts/Base.astro";
+import Navbar from "../components/nav/Navbar.astro";
+import Footer from "../components/footer/Footer.astro";
+
+const lastUpdated = "April 18, 2026";
+---
+
+<Base
+  title="Privacy Policy — Lumen"
+  description="How Lumen Labs collects, uses, and protects your data."
+  canonical="https://lumen.risesitelab.com/privacy"
+>
+  <Navbar />
+
+  <section class="pt-32 md:pt-40 pb-20">
+    <article class="container-page max-w-3xl">
+      <a href="/" class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white mb-8 transition-colors">
+        <svg viewBox="0 0 16 16" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 8H3M7 4 3 8l4 4"/>
+        </svg>
+        Back to home
+      </a>
+
+      <h1 class="text-4xl md:text-5xl font-display font-semibold tracking-[-0.022em] leading-[1.05] mb-3">
+        Privacy Policy
+      </h1>
+      <p class="text-sm text-slate-500 mb-12">Last updated: {lastUpdated}</p>
+
+      <div class="prose-custom space-y-8 text-slate-300 leading-[1.75]">
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">1. Introduction</h2>
+          <p>
+            Lumen Labs ("Lumen," "we," "us," or "our") respects your privacy and is committed
+            to protecting your personal data. This Privacy Policy explains how we collect, use,
+            disclose, and safeguard information when you use our software-as-a-service platform
+            (the "Service") and our website at lumen.risesitelab.com.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">2. Information We Collect</h2>
+          <p>We collect the following categories of information:</p>
+          <ul class="list-disc pl-6 mt-3 space-y-2 marker:text-cyan-400">
+            <li><strong class="text-white font-medium">Account data:</strong> name, email, organization, billing information.</li>
+            <li><strong class="text-white font-medium">Usage data:</strong> log records, IP address, device, browser type, pages viewed, timestamps.</li>
+            <li><strong class="text-white font-medium">Customer content:</strong> data, prompts, files, and outputs you submit to or generate within the Service.</li>
+            <li><strong class="text-white font-medium">Cookies and similar technologies:</strong> for authentication, preferences, and analytics.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">3. How We Use Information</h2>
+          <p>We process personal data to:</p>
+          <ul class="list-disc pl-6 mt-3 space-y-2 marker:text-cyan-400">
+            <li>Provide, maintain, and improve the Service.</li>
+            <li>Process transactions and send related communications.</li>
+            <li>Detect and prevent fraud, abuse, and security incidents.</li>
+            <li>Comply with legal and regulatory obligations.</li>
+            <li>Communicate product updates and respond to inquiries.</li>
+          </ul>
+          <p class="mt-3">
+            We do not use customer content to train any general-purpose model. Your data
+            stays your data.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">4. Legal Bases (GDPR)</h2>
+          <p>
+            For visitors in the European Economic Area, we process personal data under the
+            following legal bases: performance of a contract, our legitimate interests,
+            compliance with legal obligations, and your consent (where applicable).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">5. Sharing</h2>
+          <p>
+            We share information only with sub-processors necessary to operate the Service
+            (cloud hosting, payment processing, email delivery, analytics) under written
+            data-processing agreements. We do not sell personal data.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">6. Data Retention</h2>
+          <p>
+            Account and billing records are retained for the duration of your subscription and
+            for up to seven years thereafter for accounting and tax purposes. Customer content
+            is retained until you delete it or terminate your account.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">7. International Transfers</h2>
+          <p>
+            We host data in the EU and US. International transfers are carried out under
+            Standard Contractual Clauses approved by the European Commission.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">8. Your Rights</h2>
+          <p>
+            Subject to applicable law, you may access, correct, delete, restrict, or port your
+            personal data, and object to certain processing activities. Contact us using the
+            details below to exercise these rights.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">9. Security</h2>
+          <p>
+            We use industry-standard technical and organizational measures including
+            encryption in transit, encryption at rest, access controls, and regular audits to
+            protect personal data.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">10. Children</h2>
+          <p>
+            The Service is not directed to children under 16. We do not knowingly collect
+            personal data from children.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">11. Changes</h2>
+          <p>
+            We may update this Privacy Policy from time to time. Material changes will be
+            communicated via email or in-product notice at least 30 days before taking effect.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-display font-semibold text-white mb-3">12. Contact</h2>
+          <p>
+            For privacy questions or to exercise your rights, contact our Data Protection
+            Officer at <a href="mailto:privacy@lumen.example" class="text-cyan-300 hover:text-cyan-200">privacy@lumen.example</a>.
+          </p>
+        </section>
+      </div>
+    </article>
+  </section>
+
+  <Footer />
+</Base>

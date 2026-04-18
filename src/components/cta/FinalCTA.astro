@@ -1,0 +1,36 @@
+---
+import { finalCta } from "../../lib/content";
+---
+
+<section id="cta" class="section relative">
+  <div class="container-page">
+    <div class="reveal relative max-w-5xl mx-auto rounded-[28px] overflow-hidden glass-strong p-10 md:p-16 text-center">
+      <!-- Glow background -->
+      <div aria-hidden class="pointer-events-none absolute inset-0">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-cyan-400/15 blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-72 h-72 rounded-full bg-indigo-500/20 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-violet-500/15 blur-3xl"></div>
+      </div>
+
+      <div class="relative">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-[-0.022em] leading-[1.05] max-w-3xl mx-auto">
+          {finalCta.headline}
+        </h2>
+        <p class="mt-5 text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
+          {finalCta.sub}
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href={finalCta.primary.href} class="btn-primary">
+            {finalCta.primary.label}
+            <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 8h10M9 4l4 4-4 4" />
+            </svg>
+          </a>
+          <a href={finalCta.secondary.href} class="btn-ghost">
+            {finalCta.secondary.label}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

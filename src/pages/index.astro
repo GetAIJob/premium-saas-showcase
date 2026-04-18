@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import Navbar from "../components/nav/Navbar.astro";
+import Hero from "../components/hero/Hero.astro";
+import LogoRow from "../components/trust/LogoRow.astro";
+import BentoGrid from "../components/features/BentoGrid.astro";
+import HowItWorks from "../components/flow/HowItWorks.astro";
+import Testimonials from "../components/proof/Testimonials.astro";
+import PricingSection from "../components/pricing/PricingSection.tsx";
+import FinalCTA from "../components/cta/FinalCTA.astro";
+import Footer from "../components/footer/Footer.astro";
+import Cursor from "../components/ui/Cursor.tsx";
+---
+
+<Base>
+  <Navbar />
+  <Hero />
+  <LogoRow />
+  <BentoGrid />
+  <HowItWorks />
+  <Testimonials />
+  <PricingSection client:visible />
+  <FinalCTA />
+  <Footer />
+  <Cursor client:idle />
+</Base>

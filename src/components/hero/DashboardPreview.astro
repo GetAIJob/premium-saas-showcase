@@ -1,0 +1,136 @@
+---
+/**
+ * Faux Lumen dashboard — pure SVG/HTML, no external assets.
+ * Renders a glass-framed product mock for the hero.
+ */
+---
+
+<div class="relative mx-auto max-w-5xl">
+  <!-- Outer glow -->
+  <div aria-hidden class="absolute -inset-x-12 -inset-y-8 bg-gradient-to-b from-cyan-400/20 via-indigo-500/10 to-transparent blur-2xl opacity-70"></div>
+
+  <!-- Frame -->
+  <div class="relative glass-strong rounded-2xl overflow-hidden shadow-[0_30px_120px_-30px_rgba(99,102,241,0.5)]">
+    <!-- Window chrome -->
+    <div class="flex items-center justify-between px-5 py-3 border-b border-white/[0.06] bg-white/[0.02]">
+      <div class="flex items-center gap-1.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+      </div>
+      <div class="text-[11px] font-mono text-slate-400 px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.06]">
+        lumen.app/workspace/agents
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-400 to-cyan-400"></span>
+      </div>
+    </div>
+
+    <!-- Body grid: sidebar + main -->
+    <div class="grid grid-cols-[180px_1fr] min-h-[360px] md:min-h-[420px]">
+      <!-- Sidebar -->
+      <aside class="border-r border-white/[0.06] p-4 bg-white/[0.015]">
+        <div class="text-[10px] uppercase tracking-wider text-slate-500 mb-3 px-2">Workspace</div>
+        <ul class="space-y-1 text-sm">
+          <li class="px-2 py-1.5 rounded-md bg-indigo-500/10 text-indigo-200 font-medium flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse-glow"></span>
+            Agents
+          </li>
+          <li class="px-2 py-1.5 rounded-md text-slate-400 hover:bg-white/[0.04]">Knowledge</li>
+          <li class="px-2 py-1.5 rounded-md text-slate-400 hover:bg-white/[0.04]">Workflows</li>
+          <li class="px-2 py-1.5 rounded-md text-slate-400 hover:bg-white/[0.04]">Audit log</li>
+          <li class="px-2 py-1.5 rounded-md text-slate-400 hover:bg-white/[0.04]">Integrations</li>
+        </ul>
+
+        <div class="text-[10px] uppercase tracking-wider text-slate-500 mt-6 mb-3 px-2">Active runs</div>
+        <ul class="space-y-1.5 text-xs">
+          <li class="px-2 py-1.5 rounded-md text-slate-400 flex items-center justify-between">
+            <span>Triage</span>
+            <span class="text-emerald-300">●</span>
+          </li>
+          <li class="px-2 py-1.5 rounded-md text-slate-400 flex items-center justify-between">
+            <span>Researcher</span>
+            <span class="text-cyan-300">●</span>
+          </li>
+          <li class="px-2 py-1.5 rounded-md text-slate-400 flex items-center justify-between">
+            <span>Reviewer</span>
+            <span class="text-indigo-300">●</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <section class="p-5">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-slate-500">Agent</div>
+            <h3 class="text-base font-display font-semibold tracking-tight">Triage Agent</h3>
+          </div>
+          <div class="flex gap-2">
+            <span class="px-2.5 py-1 rounded-full text-[11px] bg-cyan-500/10 text-cyan-200 border border-cyan-500/20">Live</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] bg-white/[0.04] text-slate-400 border border-white/[0.08]">claude-opus</span>
+          </div>
+        </div>
+
+        <!-- KPI cards -->
+        <div class="grid grid-cols-3 gap-3 mb-4">
+          <div class="glass rounded-lg p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate-500">Today</div>
+            <div class="text-lg font-display font-semibold mt-0.5">2,418</div>
+            <div class="text-[11px] text-emerald-300 mt-0.5">+12.4%</div>
+          </div>
+          <div class="glass rounded-lg p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate-500">Avg latency</div>
+            <div class="text-lg font-display font-semibold mt-0.5">412ms</div>
+            <div class="text-[11px] text-cyan-300 mt-0.5">-8.1%</div>
+          </div>
+          <div class="glass rounded-lg p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate-500">Success</div>
+            <div class="text-lg font-display font-semibold mt-0.5">99.2%</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">SLA met</div>
+          </div>
+        </div>
+
+        <!-- Live timeline -->
+        <div class="glass rounded-lg p-4">
+          <div class="flex items-center justify-between mb-3">
+            <div class="text-[11px] uppercase tracking-wider text-slate-500">Recent activity</div>
+            <div class="text-[10px] font-mono text-slate-500">last 5 min</div>
+          </div>
+          <ul class="space-y-2.5 text-[12px]">
+            <li class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span>
+              <span class="text-slate-300">Routed <span class="font-mono text-cyan-200">#7421</span> → Researcher</span>
+              <span class="ml-auto text-slate-500 font-mono text-[10px]">12s</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-300"></span>
+              <span class="text-slate-300">Resolved <span class="font-mono text-indigo-200">#7415</span> with summary</span>
+              <span class="ml-auto text-slate-500 font-mono text-[10px]">38s</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-violet-300"></span>
+              <span class="text-slate-300">Escalated <span class="font-mono text-violet-200">#7408</span> → human review</span>
+              <span class="ml-auto text-slate-500 font-mono text-[10px]">1m</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-300"></span>
+              <span class="text-slate-300">Indexed 142 new docs from Notion</span>
+              <span class="ml-auto text-slate-500 font-mono text-[10px]">2m</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Floating mini-cards (decorative) -->
+  <div aria-hidden class="hidden md:block absolute -left-8 top-24 glass rounded-xl p-3 shadow-2xl rotate-[-4deg]">
+    <div class="text-[10px] uppercase tracking-wider text-slate-500">Active agents</div>
+    <div class="text-xl font-display font-semibold text-gradient">14</div>
+  </div>
+  <div aria-hidden class="hidden md:block absolute -right-6 bottom-12 glass rounded-xl p-3 shadow-2xl rotate-[4deg]">
+    <div class="text-[10px] uppercase tracking-wider text-slate-500">Actions / min</div>
+    <div class="text-xl font-display font-semibold text-gradient">1,402</div>
+  </div>
+</div>

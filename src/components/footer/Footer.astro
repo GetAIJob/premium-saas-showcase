@@ -1,0 +1,96 @@
+---
+import { footer, brand } from "../../lib/content";
+---
+
+<footer class="relative pt-16 md:pt-24 pb-10 border-t border-white/[0.06]">
+  <div class="container-page">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
+      <!-- Brand col -->
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <span class="relative inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-brand">
+            <svg viewBox="0 0 32 32" class="relative w-5 h-5 text-[#050816]" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
+              <path d="M9 9 L9 22 L22 22"/>
+            </svg>
+          </span>
+          <span class="font-display font-semibold text-lg tracking-tight">{brand.name}</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-500 max-w-[220px] leading-relaxed">
+          The operating system for AI-native teams.
+        </p>
+        <div class="mt-5 flex items-center gap-2">
+          {footer.social.map((s) => (
+            <a
+              href={s.href}
+              aria-label={s.label}
+              class="w-9 h-9 inline-flex items-center justify-center rounded-full glass hover:border-white/[0.16] text-slate-400 hover:text-white transition-colors"
+            >
+              {s.icon === "x" && (
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              )}
+              {s.icon === "github" && (
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" clip-rule="evenodd"/>
+                </svg>
+              )}
+              {s.icon === "linkedin" && (
+                <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.34 17v-7H6v7zM7.17 8.74A1.36 1.36 0 1 0 7.17 6a1.36 1.36 0 0 0 0 2.74zM18 17v-3.83c0-2.05-1.1-3-2.56-3a2.21 2.21 0 0 0-2 1.1V10H11v7h2.34v-3.7c0-1 .19-1.94 1.4-1.94s1.18 1.13 1.18 2V17z"/>
+                </svg>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.14em] text-slate-500 mb-4">Product</h4>
+        <ul class="space-y-3 text-sm">
+          {footer.product.map((l) => (
+            <li><a href={l.href} class="text-slate-300 hover:text-white transition-colors">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.14em] text-slate-500 mb-4">Company</h4>
+        <ul class="space-y-3 text-sm">
+          {footer.company.map((l) => (
+            <li><a href={l.href} class="text-slate-300 hover:text-white transition-colors">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.14em] text-slate-500 mb-4">Resources</h4>
+        <ul class="space-y-3 text-sm">
+          {footer.resources.map((l) => (
+            <li><a href={l.href} class="text-slate-300 hover:text-white transition-colors">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="text-xs uppercase tracking-[0.14em] text-slate-500 mb-4">Legal</h4>
+        <ul class="space-y-3 text-sm">
+          {footer.legal.map((l) => (
+            <li><a href={l.href} class="text-slate-300 hover:text-white transition-colors">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider-x my-10"></div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>{footer.copyright}</p>
+      <p>Crafted by <a href="https://risesitelab.com" class="text-slate-300 hover:text-white">GrowthSite Lab</a> · Built with Astro 5</p>
+    </div>
+  </div>
+</footer>
